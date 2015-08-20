@@ -1,0 +1,19 @@
+%h1 You have successfully logged in!
+
+%p  What we know about you:
+
+%p
+  %div(style="float:left")
+  = image_tag(@user_info.image)
+  %p
+    = @user_info.name
+    = surround '(', ')' do
+      = @user_info.nickname
+  %p
+    Location:
+    = @user_info.location
+  %p= @user_info.description
+
+%p(style="clear:both") Details:
+%pre
+  = @user_info.pretty_inspect
